@@ -27,7 +27,8 @@ echo "###############################################################"
 
 cd claymore9.7
 cp start.sh mine.sh
-sed -i 's/$/> jh.log/g' mine.sh
+sed -i 's/$/ -r o/g' mine.sh
+sed -i 's/$/ > jh.log/g' mine.sh
 chmod +x mine.sh
 
 #echo "###############################################################"
