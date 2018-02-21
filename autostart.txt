@@ -83,7 +83,7 @@ echo "##                    crontab job  TT                        ##"
 echo "###############################################################"
 
 crontab -l > mycron
-echo "@reboot sleep 40; /home/$1/auto_start.sh" >> mycron
+echo "@reboot sleep 30; /home/$1/auto_start.sh" >> mycron
 echo "@reboot /home/$1/auto_update.sh" >> mycron
 crontab mycron
 rm mycron
