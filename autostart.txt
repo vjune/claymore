@@ -17,6 +17,13 @@ sudo apt-get update && sudo apt-get upgrade -y
 echo "###############################################################"
 echo "##                    install tmux                           ##"
 echo "###############################################################"
+echo "###############################################################"
+echo "##                    install tmux                           ##"
+echo "###############################################################"
+sudo apt-get install tmux -y
+echo "###############################################################"
+echo "##                    install tmux                           ##"
+echo "###############################################################"
 
 sudo apt-get install tmux -y
 
@@ -47,7 +54,7 @@ sudo echo 'tmux send-keys -t MINER "cd '$HOME/claymore9.7'" C-m' >> auto_start.s
 
 sudo echo 'tmux send-keys -t MINER "sudo ./mine.sh" C-m' >> auto_start.sh
 
-sudo echo 'tmux send-keys -t MINER "1112" C-m' >> auto_start.sh
+sudo echo 'tmux send-keys -t MINER "1212" C-m' >> auto_start.sh
 
 echo "###############################################################"
 echo "##                    make auto_update.sh by June            ##"
@@ -66,7 +73,7 @@ sudo echo 'tmux new-session -t JUNE' >> auto_update.sh
 
 sudo echo 'tmux send-keys -t JUNE "sudo apt autoremove --purge -y" C-m' >> auto_update.sh
 
-sudo echo 'tmux send-keys -t JUNE "1112" C-m' >> auto_update.sh
+sudo echo 'tmux send-keys -t JUNE "1212" C-m' >> auto_update.sh
 sudo echo 'tmux send-keys -t JUNE "sudo apt-get update && sudo apt-get upgrade -y" C-m' >> auto_update.sh
 sudo echo 'tmux send-keys -t JUNE "tmux kill-window" C-m' >> auto_update.sh
 sudo echo 'tmux send-keys -t JUNE "sudo nvidia-xconfig -a --cool-bits=28 --allow-empty-initial-configuration" C-m' >> auto_update.sh
@@ -76,7 +83,7 @@ echo "##                    crontab job  TT                        ##"
 echo "###############################################################"
 
 crontab -l > mycron
-echo "@reboot sleep 30; /home/$1/auto_start.sh" >> mycron
+echo "@reboot sleep 40; /home/$1/auto_start.sh" >> mycron
 echo "@reboot /home/$1/auto_update.sh" >> mycron
 crontab mycron
 rm mycron
